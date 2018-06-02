@@ -24,9 +24,35 @@ public class LoginServlet extends HttpServlet {
         String method = request.getParameter("method");
         if (method.equals("loginUser")){
             loginUser(request,response);
+        }else if (method.equals("register")){
+            register(request,response);
         }
 
     }
+
+    /**
+     * 注册
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("pwd");
+        Users users = new Users();
+        users.setUname(userName);
+        users.setUpwd(password);
+        loginService.register(users);
+    }
+
+    /**
+     * 登录
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void loginUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String username = request.getParameter("userName");
         String password = request.getParameter("pwd");

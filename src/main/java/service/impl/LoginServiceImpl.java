@@ -14,4 +14,9 @@ public class LoginServiceImpl implements LoginService {
         List<Users> users1 = loginDao.login(users);
         return users1;
     }
+
+    @Override
+    public void register(Users users) {
+        loginDao.register(users);
+    }
 }

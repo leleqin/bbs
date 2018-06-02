@@ -11,4 +11,10 @@ public interface LoginDao {
      * @return
      */
     public List<Users> login(Users users);
+
+    /**
+     * 中户注册
+     * @param users
+     */
+    public void register(Users users);
 }

@@ -14,4 +14,11 @@ public class LoginDaoImpl extends DaoUtlis implements LoginDao{
         List<Users> list = super.query(sql,num,Users.class);
         return (list!=null&&list.size()>0?list:null);
     }
+
+    @Override
+    public void register(Users users) {
+        String sql = "INSERT INTO users (uname,upwd) VALUES(?,?)";
+        Object[] num = {users.getUname(),users.getUpwd()};
+        super.update(sql,num);
+    }
 }

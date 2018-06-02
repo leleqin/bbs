@@ -11,4 +11,10 @@ public interface LoginService{
      * @return
      */
     public List<Users> login(Users users);
+
+    /**
+     * 用户注册
+     * @param users
+     */
+    public void register(Users users);
 }
