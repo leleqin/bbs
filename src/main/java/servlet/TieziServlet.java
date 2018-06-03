@@ -26,6 +26,12 @@ public class TieziServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 所有帖子展示页
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     public void tieziShow(HttpServletRequest request,HttpServletResponse response) throws IOException {
         List<Tiezi> tieziList = tieziService.tieziShow();
         if (tieziList != null) {
@@ -33,8 +39,24 @@ public class TieziServlet extends HttpServlet {
             response.getWriter().print(jsonArray);
         }
     }
+
+    /**
+     * 单个帖子
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Content-type","text/html;charset=UTF-8");
+        int id = Integer.parseInt(request.getParameter("id"));
+        Tiezi tiezi = new Tiezi();
+        tiezi.setTid(id);
+        List<Tiezi> tieziList = tieziService.TieziSingleShow(tiezi);
+        if (tieziList != null) {
+            JSONArray jsonArray = JSONArray.fromObject(tieziList);
+            response.getWriter().print(jsonArray);
+        }
 
     }
 }

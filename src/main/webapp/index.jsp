@@ -35,7 +35,7 @@
                 success: function (data) {
                     var jsonData = eval(data);
                         for (var i = 0;i < data.length;i++){
-                            $("#tiezi").append("<header><h3>"+jsonData[i]['title']+"</h3>"
+                            $("#tiezi").append("<header><h3><a href='about.jsp?id="+jsonData[i]['tid']+"'>"+jsonData[i]['title']+"</a></h3>"
                                 +"<p class=\"postinfo\">"+jsonData[i]['uid']+"<time>&nbsp;&nbsp;&nbsp;&nbsp;"
                                 +ChangeDateFormat(jsonData[i]['tdate'])+"</time></p></header>"
                                 +"<p>"+jsonData[i]['tcontent'].substr(0,100)+"……"+"</p>"

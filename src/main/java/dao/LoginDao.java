@@ -13,7 +13,7 @@ public interface LoginDao {
     public List<Users> login(Users users);
 
     /**
-     * 中户注册
+     * 用户注册
      * @param users
      */
     public void register(Users users);
