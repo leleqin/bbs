@@ -3,6 +3,7 @@ package servlet;
 import entity.Tiezi;
 import jdk.nashorn.internal.parser.JSONParser;
 import net.sf.json.JSONArray;
+import service.TieziService;
 import service.impl.TieziServiceImpl;
 
 import javax.servlet.ServletException;
@@ -23,9 +24,19 @@ public class TieziServlet extends HttpServlet {
         String method = request.getParameter("method");
         if (method.equals("tieziShow")){
             tieziShow(request,response);
+        }else if (method.equals("fatie")){
+            fatie(request,response);
         }
     }
 
+    public void fatie(HttpServletRequest request,HttpServletResponse response){
+        String title = request.getParameter("title");
+        String tcontent = request.getParameter("tcontent");
+        Tiezi tiezi = new Tiezi();
+        tiezi.setTitle(title);
+        tiezi.setTcontent(tcontent);
+        tieziService.fatie(tiezi);
+    }
     /**
      * 所有帖子展示页
      * @param request

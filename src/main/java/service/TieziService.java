@@ -16,4 +16,11 @@ public interface TieziService {
      * @return
      */
     public List<Tiezi> TieziSingleShow(Tiezi tiezi);
+
+    /**
+     * 发帖
+     * @param tiezi
+     * @return
+     */
+    public void fatie(Tiezi tiezi);
 }

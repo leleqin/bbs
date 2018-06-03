@@ -2,7 +2,7 @@
 <%@page isELIgnored="false" %>
 <head>
     <meta charset="UTF-8"/>
-    <title>Silver Blog | Free WordPress Theme</title>
+    <title>回帖</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -69,7 +69,47 @@
             <div id="leftcontainer">
                 <div class="clear"></div>
             </div>
+
+            <%--回复列表--%>
+            <div id="commentlist">
+            <article class="entry">
+                <div class="avatar">
+                    <img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=38">
+                    <p class="author">
+                        <span class="name"><a href="#">Roshan Ravi</a></span>
+                        <time class="date">12 June 2010</time>
+
+                    </p>
+                </div>
+                <div class="comment">
+
+                    <p>Pellentesque vel erat ac elit ultrices dignissim a ut velit. Donec laoreet sem a turpis viverra ut aliquet odio interdum. Nunc consequat rhoncus vehicula. Cras iaculis enim in neque hendrerit eget laoreet mi adipiscing.</p>
+
+                </div>
+                <div class="clear"></div>
+            </article>
+            </div>
+
+
+            <%--回复--%>
+            <h3 id="respond">Leave a Reply</h3>
+            <form action="#" method="post" id="commentform">
+                <p>
+                    <small><strong>回复:</strong>写些你想写的！</small>
+                </p>
+                <p class="text-area">
+       <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4">
+       </textarea>
+                </p>
+                <p>
+                    <input type="button" id="submit" value="提交" class="submit">
+                    <input name="comment_post_ID" value="1" type="hidden">
+                </p>
+                <div class="clear"></div>
+            </form>
+
         </section>
+
         <section id="sidebar">
             <div id="sidebarwrap">
                 <h2>Categories</h2>

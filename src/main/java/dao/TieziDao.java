@@ -17,4 +17,11 @@ public interface TieziDao {
      */
     public List<Tiezi> TieziSingleShow(Tiezi tiezi);
 
+    /**
+     * 发帖
+     * @param tiezi
+     * @return
+     */
+    public void fatie(Tiezi tiezi);
+
 }

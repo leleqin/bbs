@@ -22,4 +22,16 @@ public class TieziDaoImpl extends DaoUtlis implements TieziDao {
         List<Tiezi> tieziList = super.query(sql,num,Tiezi.class);
         return (tieziList!=null&&tieziList.size()>0?tieziList:null);
     }
+
+    /**
+     * 发帖
+     * @param tiezi
+     * @return
+     */
+    @Override
+    public void fatie(Tiezi tiezi) {
+        String sql = "INSERT INTO tiezi (title,tcontent) VALUES(?,?);";
+        Object[] num = {tiezi.getTitle(),tiezi.getTcontent()};
+        super.update(sql,num);
+    }
 }

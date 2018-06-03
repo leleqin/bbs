@@ -29,4 +29,14 @@ public class TieziServiceImpl implements TieziService {
     public List<Tiezi> TieziSingleShow(Tiezi tiezi) {
         return tieziDao.TieziSingleShow(tiezi);
     }
+
+    /**
+     * 发帖
+     * @param tiezi
+     * @return
+     */
+    @Override
+    public void fatie(Tiezi tiezi) {
+        tieziDao.fatie(tiezi);
+    }
 }
