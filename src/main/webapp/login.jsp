@@ -23,11 +23,13 @@
             url:'/loginServlet?method=loginUser',
             data:{userName:userName,pwd:pwd},
             success:function (msg) {
-                if (msg=='ok'){
-                    location.href = "/index.jsp";
-                }else {
-                    alert("失败");
-                }
+                if(msg == 1){
+                    location.href="admin/index.html";
+				}else if (msg == 0) {
+                    location.href="index.jsp";
+				}else {
+                    alert("请输入正确的用户名和密码");
+				}
             }
         })
     }
@@ -58,6 +60,7 @@
 					<input type="button" value="登录" onclick="login()">
 				</div>
 				<p class="p-bottom-w3ls"><a href="register.jsp">点击注册</a>如果你没有一个帐户。</p>
+				<p class="p-bottom-w3ls">可自动判断您是否是管理员</p>
 			</form>
 		</div>
 		</div>

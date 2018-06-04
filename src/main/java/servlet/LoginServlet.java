@@ -1,6 +1,7 @@
 package servlet;
 
 import entity.Users;
+import net.sf.json.JSONArray;
 import service.impl.LoginServiceImpl;
 
 import javax.servlet.ServletException;
@@ -63,7 +64,12 @@ public class LoginServlet extends HttpServlet {
         if (list!=null){
             HttpSession session = request.getSession();
             session.setAttribute("userInfo",list);
-            response.getWriter().print("ok");
+            int trank = Integer.parseInt(list.get(0).getUtype());
+            if (trank == 0){
+                response.getWriter().print(0);
+            }else{
+                response.getWriter().print(1);
+            }
         }else {
             response.getWriter().print("no");
         }

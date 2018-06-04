@@ -47,7 +47,7 @@
                     + "<article class=\"post\">" + jsonData[0]['tcontent'] + "</article>")
             },
             error: function () {
-                alert("失败")
+                alert("请转到首页打开一个帖子！")
             }
         });
     </script>

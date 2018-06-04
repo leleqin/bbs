@@ -30,7 +30,7 @@
   * 封装查询修改语句：DaoUtlis.java
 * entity
   * 用户实体类：Users.java
-  * 帖子实体类：Tiezi.java
+  * 帖子实体类：Tiezi.java``
 * servlet
   * 登录和注册的servlet：LoginServlet.java
   * 帖子展示的servlet：TieziServlet.java
