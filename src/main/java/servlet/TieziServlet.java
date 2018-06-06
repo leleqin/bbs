@@ -29,6 +29,11 @@ public class TieziServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 发帖
+     * @param request
+     * @param response
+     */
     public void fatie(HttpServletRequest request,HttpServletResponse response){
         String title = request.getParameter("title");
         String tcontent = request.getParameter("tcontent");

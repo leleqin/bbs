@@ -26,6 +26,8 @@ public class DaoUtlis {
             pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            DbUtlis.dbClose(conn,pstmt);
         }
     }
 
@@ -74,6 +76,8 @@ public class DaoUtlis {
             return list;
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            DbUtlis.dbClose(conn,pstmt,rs);
         }
         return null;
     }

@@ -42,9 +42,11 @@
             contentType: 'application/json;charset=utf-8',
             success: function (data) {
                 var jsonData = eval(data);
+                console.log(jsonData);
                 $("#title").append(jsonData[0]['title'])
                 $("#leftcontainer").append("<h2 class=\"mainheading\"> " + jsonData[0]['uid'] + "</h2>"
                     + "<article class=\"post\">" + jsonData[0]['tcontent'] + "</article>")
+
             },
             error: function () {
                 alert("请转到首页打开一个帖子！")
@@ -62,6 +64,7 @@
     </section>
     <header id="pageheader">
         <h1 id="title">
+
         </h1>
     </header>
     <div id="contents">

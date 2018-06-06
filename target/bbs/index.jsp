@@ -40,7 +40,7 @@
                                 +ChangeDateFormat(jsonData[i]['tdate'])+"</time></p></header>"
                                 +"<p>"+jsonData[i]['tcontent'].substr(0,100)+"……"+"</p>"
                                 +"<footer><span class=\"author\">浏览人数&nbsp;&nbsp;&nbsp;"+jsonData[i]['tnum1']+"</span>"
-                                +"<span>回帖人数&nbsp;&nbsp;&nbsp;"+jsonData[i]['tnum2']+"</span></footer>"
+                                +"<span>回帖人数&nbsp;&nbsp;&nbsp;"+jsonData[i]['tnum2']+"</span></footer><div class=\"clear\"></div>"
                             )
                         }
                 }
@@ -86,6 +86,8 @@
                 </h2>
 
                 <article class="post" id="tiezi">
+                    <br>
+                    <div class="clear"></div>
                 </article>
 
                 <div class="wp-pagenavi">

@@ -1,7 +1,6 @@
 package untils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 public class DbUtlis {
     public static Connection getConnection() {
@@ -23,4 +22,27 @@ public class DbUtlis {
 
         return conn;
     }
+
+    public static void dbClose(Connection connection, PreparedStatement preparedStatement){
+        try {
+            connection.close();
+            preparedStatement.close();
+            System.out.println("关闭成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void dbClose(Connection connection, PreparedStatement preparedStatement,ResultSet resultSet){
+        try {
+            connection.close();
+            preparedStatement.close();
+            resultSet.close();
+            System.out.println("关闭成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
+
+

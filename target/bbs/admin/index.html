@@ -1,95 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>管理员登录</title>
-    <link rel="stylesheet" href="./plugins/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="./plugins/font-awesome/css/font-awesome.min.css" media="all">
-    <link rel="stylesheet" href="./src/css/app.css" media="all">
-    <link rel="stylesheet" href="./src/css/themes/default.css" media="all">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
 
-<body class="kit-theme">
-    <div class="layui-layout layui-layout-admin kit-layout-admin">
-        <div class="layui-header">
-            <div class="layui-logo">管理员界面</div>
-            <div class="layui-logo kit-logo-mobile">K</div>
-            <ul class="layui-nav layui-layout-right kit-nav">
-                <li class="layui-nav-item">
-                    <a href="javascript:;">
-                        <img src="http://m.zhengjinfan.cn/images/0.jpg" class="layui-nav-img"> Van
-                    </a>
-                </li>
-                <li class="layui-nav-item"><a href="javascript:;"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
-            </ul>
-        </div>
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all">
+		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
 
-        <div class="layui-side layui-bg-black kit-side">
-            <div class="layui-side-scroll">
-                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true"></i></div>
-                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-                <ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
-                    <li class="layui-nav-item  layui-nav-itemed">
-                        <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 基本元素</span></a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a href="javascript:;" kit-target data-options="{url:'table.html',icon:'&#xe6c6;',title:'表格',id:'1'}">
-                                    <i class="layui-icon">&#xe6c6;</i><span> 表格</span></a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="ztree.html" data-icon="&#xe628;" data-title="ZTree" kit-target data-id='2'><i class="layui-icon">&#xe628;</i><span> ZTree</span></a>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="layui-body" id="container">
-            <!-- 内容主体区域 -->
-            <!-- <div style="padding: 15px;"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop">&#xe63e;</i> 请稍等...</div> -->
-            <div style="padding: 15px;">
-                <h3>欢迎光临</h3>
-                <br>
-                你可以点击左侧导航栏进行管理……
-            </div>
-        </div>
+	</head>
 
-        <div class="layui-footer">
-            <!-- 底部固定区域 -->
-            2018 &copy;
-            chenjiale的论坛管理
-        </div>
-    </div>
-    <script type="text/javascript">
-        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cspan id='cnzz_stat_icon_1264021086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264021086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script src="./plugins/layui/layui.js"></script>
-    <script>
-        layui.config({
-            base: 'src/js/',
-            version: '1.0.3'
-        }).use(['app'], function() {
-            var app = layui.app,
-                $ = layui.jquery,
-                layer = layui.layer;
-            //主入口
-            app.set({
-                type: 'spa'
-            }).init();
-            $('#pay').on('click', function() {
-                layer.open({
-                    title: false,
-                    type: 1,
-                    content: '<img src="/src/images/pay.png" />',
-                    area: ['500px', '250px'],
-                    shadeClose: true
-                });
-            });
-        });
-    </script>
-</body>
+	<body>
+		<div class="layui-layout layui-layout-admin" style="border-bottom: solid 5px #1aa094;">
+			<div class="layui-header header header-demo">
+				<div class="layui-main">
+					<div class="admin-login-box">
+						<a class="logo" style="left: 0;" href="http://beginner.zhengjinfan.cn/demo/beginner_admin/">
+							<span style="font-size: 22px;">Admin</span>
+						</a>
+						<div class="admin-side-toggle">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</div>
+						<div class="admin-side-full">
+							<i class="fa fa-life-bouy" aria-hidden="true"></i>
+						</div>
+					</div>
+					<ul class="layui-nav admin-header-item">
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="admin-header-user">
+								<img src="images/0.jpg" />
+								<span>beginner</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="layui-nav admin-header-item-mobile">
+					</ul>
+				</div>
+			</div>
+			<div class="layui-side layui-bg-black" id="admin-side">
+				<div class="layui-side-scroll" id="admin-navbar-side" lay-filter="side"></div>
+			</div>
+			<div class="layui-body" style="bottom: 0;border-left: solid 2px #1AA094;" id="admin-body">
+				<div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
+					<ul class="layui-tab-title">
+						<li class="layui-this">
+							<i class="fa fa-dashboard" aria-hidden="true"></i>
+							<cite>控制面板</cite>
+						</li>
+					</ul>
+					<div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">
+						<div class="layui-tab-item layui-show">
+							<iframe src="main.html"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="site-tree-mobile layui-hide">
+				<i class="layui-icon">&#xe602;</i>
+			</div>
+			<div class="site-mobile-shade"></div>
+
+			<script type="text/javascript" src="plugins/layui/layui.js"></script>
+			<script type="text/javascript" src="datas/nav.js"></script>
+			<script src="js/index.js"></script>
+			<script>
+				layui.use('layer', function() {
+					var $ = layui.jquery,
+						layer = layui.layer;
+
+					$('#video1').on('click', function() {
+						layer.open({
+							title: 'YouTube',
+							maxmin: true,
+							type: 2,
+							content: 'video.html',
+							area: ['800px', '500px']
+						});
+                    });
+                    $('#pay').on('click', function () {
+                        layer.open({
+                            title: false,
+                            type: 1,
+                            content: '<img src="images/xx.png" />',
+                            area: ['500px', '250px'],
+                            shadeClose: true
+                        });
+                    });
+
+
+				});
+			</script>
+		</div>
+	</body>
 
 </html>
