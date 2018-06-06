@@ -28,7 +28,7 @@
                     <th>ID</th>
                     <th>用户名</th>
                     <th>邮箱</th>
-                    <th>权限(1:管理员;2:会员)</th>
+                    <th>权限(1:管理员;0:会员)</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -186,14 +186,6 @@
 
 <div class="layui-field-box layui-form" id="userAdd" style="display: none">
     <form class="layui-form" action="/usersServlet?method=addUser" method="post">
-        <div class="layui-form-item">
-            <input type="hidden" name="s_id">
-            <label class="layui-form-label">ID</label>
-            <div class="layui-input-inline">
-                <input style="background:#F6F6F6" name="uid" id="uid" readonly autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">输入用户名</label>
             <div class="layui-input-inline">

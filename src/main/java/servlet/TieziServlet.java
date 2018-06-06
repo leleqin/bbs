@@ -26,9 +26,16 @@ public class TieziServlet extends HttpServlet {
             tieziShow(request,response);
         }else if (method.equals("fatie")){
             fatie(request,response);
+        }else if (method.equals("deleteTiezi")){
+            deleteTiezi(request,response);
         }
     }
 
+    public void deleteTiezi(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        tieziService.deleteTiezi(id);
+        response.sendRedirect(request.getContextPath()+"/admin/tieziManager.html");
+    }
     /**
      * 发帖
      * @param request

@@ -24,4 +24,5 @@ public interface TieziDao {
      */
     public void fatie(Tiezi tiezi);
 
+    public void deleteTiezi(int id);
 }

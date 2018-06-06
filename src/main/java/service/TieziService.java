@@ -23,4 +23,6 @@ public interface TieziService {
      * @return
      */
     public void fatie(Tiezi tiezi);
+
+    public void deleteTiezi(int id);
 }

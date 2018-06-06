@@ -39,4 +39,13 @@ public class TieziServiceImpl implements TieziService {
     public void fatie(Tiezi tiezi) {
         tieziDao.fatie(tiezi);
     }
+
+    /**
+     * 删帖
+     * @param id
+     */
+    @Override
+    public void deleteTiezi(int id) {
+        tieziDao.deleteTiezi(id);
+    }
 }

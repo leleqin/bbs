@@ -45,4 +45,11 @@ public class TieziDaoImpl extends DaoUtlis implements TieziDao {
         Object[] num = {tiezi.getTitle(),tiezi.getTcontent()};
         super.update(sql,num);
     }
+
+    @Override
+    public void deleteTiezi(int id) {
+        String sql = "delete from tiezi where tid = ?";
+        Object[] num = {id};
+        super.update(sql,num);
+    }
 }
